@@ -83,7 +83,6 @@ process markdup {
 }
 
 process fastaIndex {
-    executor "dnanexus"
     container "quay.io/biocontainers/mulled-v2-0560a8046fc82aa4338588eca29ff18edab2c5aa:c17ce694dd57ab0ac1a2b86bb214e65fedef760e-0"
     publishDir "${params.outDir}"
     input:
