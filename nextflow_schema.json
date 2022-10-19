@@ -7,8 +7,7 @@
     "properties": {
         "outDir": {
             "type": "string",
-            "format": "directory-path",
-            "default": null
+            "format": "directory-path"
         }
     },
     "required": [
