@@ -1,0 +1,107 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/haplotypecaller/master/nextflow_schema.json",
+    "title": "haplotypecaller pipeline parameters",
+    "description": "",
+    "type": "object",
+    "properties": {
+        "outDir": {
+            "type": "string",
+            "format": "directory-path",
+            "default": null
+        }
+    },
+    "required": [
+        "outDir"
+    ],
+    "definitions": {
+        "inputs": {
+            "title": "Inputs",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "properties": {
+                "sampleID": {
+                    "type": "string",
+                    "default": null
+                },
+                "fastqR1": {
+                    "type": "string",
+                    "format": "file-path",
+                    "mimetype": "text/plain",
+                    "pattern": "^\\S+\\.fastq.gz"
+                },
+                "fastqR2": {
+                    "type": "string",
+                    "format": "file-path",
+                    "mimetype": "text/plain",
+                    "pattern": "^\\S+\\.fastq.gz"
+                }
+            },
+            "required": [
+                "sampleID",
+                "fastqR1",
+                "fastqR2"
+            ]
+        },
+        "reference": {
+            "title": "Reference",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "properties": {
+                "fastaIn": {
+                    "type": "string",
+                    "format": "file-path",
+                    "mimetype": "text/plain",
+                    "pattern": "^\\S+\\.fa.gz",
+                    "default": "dx://project-GGkXj2Q02y621ZZ9916G2Zy0:/inputs/references/GRCh38.no_alt_analysis_set.fa.gz"
+                },
+                "ref": {
+                    "type": "string",
+                    "format": "file-path",
+                    "mimetype": "text/plain",
+                    "pattern": "^\\S+\\.bwa-index.tar.gz",
+                    "default": "dx://project-GGkXj2Q02y621ZZ9916G2Zy0:/inputs/references/GRCh38.no_alt_analysis_set.bwa-index.tar.gz"
+                }
+            },
+            "required": [
+                "fastaIn",
+                "ref"
+            ]
+        },
+        "varinats": {
+            "title": "Varinats",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "properties": {
+                "knownVariants": {
+                    "type": "string",
+                    "format": "file-path",
+                    "mimetype": "text/plain",
+                    "pattern": "^\\S+\\.vcf.gz",
+                    "default": "dx://project-GGkXj2Q02y621ZZ9916G2Zy0:/inputs/references/Homo_sapiens_assembly38.dbsnp138.vcf.gz"
+                },
+                "dbsnp": {
+                    "type": "string",
+                    "format": "file-path",
+                    "mimetype": "text/plain",
+                    "pattern": "^\\S+\\.vcf.gz",
+                    "default": "dx://project-GGkXj2Q02y621ZZ9916G2Zy0:/inputs/references/Homo_sapiens_assembly38.dbsnp138.vcf.gz"
+                }
+            }
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/inputs"
+        },
+        {
+            "$ref": "#/definitions/reference"
+        },
+        {
+            "$ref": "#/definitions/varinats"
+        }
+    ]
+}
