@@ -4,15 +4,6 @@
     "title": "haplotypecaller pipeline parameters",
     "description": "",
     "type": "object",
-    "properties": {
-        "outDir": {
-            "type": "string",
-            "format": "directory-path"
-        }
-    },
-    "required": [
-        "outDir"
-    ],
     "definitions": {
         "inputs": {
             "title": "Inputs",
@@ -22,7 +13,7 @@
             "properties": {
                 "sampleID": {
                     "type": "string",
-                    "default": null
+                    "default": "None"
                 },
                 "fastqR1": {
                     "type": "string",
@@ -35,12 +26,17 @@
                     "format": "file-path",
                     "mimetype": "text/plain",
                     "pattern": "^\\S+\\.fastq.gz"
+                },
+                "outDir": {
+                    "type": "string",
+                    "format": "directory-path"
                 }
             },
             "required": [
                 "sampleID",
                 "fastqR1",
-                "fastqR2"
+                "fastqR2",
+                "outDir"
             ]
         },
         "reference": {
