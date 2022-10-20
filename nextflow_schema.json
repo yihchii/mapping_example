@@ -50,19 +50,21 @@
                     "format": "file-path",
                     "mimetype": "text/plain",
                     "pattern": "^\\S+\\.fa.gz",
-                    "default": "dx://project-GGkXj2Q02y621ZZ9916G2Zy0:/inputs/references/GRCh38.no_alt_analysis_set.fa.gz"
+                    "default": "dx://project-GGkXj2Q02y621ZZ9916G2Zy0:/inputs/references/GRCh38.no_alt_analysis_set.fa.gz",
+                    "hidden": true
                 },
                 "ref": {
                     "type": "string",
                     "format": "file-path",
                     "mimetype": "text/plain",
                     "pattern": "^\\S+\\.bwa-index.tar.gz",
-                    "default": "dx://project-GGkXj2Q02y621ZZ9916G2Zy0:/inputs/references/GRCh38.no_alt_analysis_set.bwa-index.tar.gz"
+                    "default": "dx://project-GGkXj2Q02y621ZZ9916G2Zy0:/inputs/references/GRCh38.no_alt_analysis_set.bwa-index.tar.gz",
+                    "hidden": true
                 }
             },
             "required": [
-                "fastaIn",
-                "ref"
+                "ref",
+                "fastaIn"
             ]
         },
         "varinats": {
@@ -73,14 +75,19 @@
             "properties": {
                 "knownVariants": {
                     "type": "string",
-                    "format": "direcrtory-path"
+                    "format": "file-path",
+                    "mimetype": "text/plain",
+                    "pattern": "^\\S+\\.vcf.gz",
+                    "default": "dx://project-GGkXj2Q02y621ZZ9916G2Zy0:/inputs/references/Homo_sapiens_assembly38.dbsnp138.vcf.gz",
+                    "hidden": true
                 },
                 "dbsnp": {
                     "type": "string",
                     "format": "file-path",
                     "mimetype": "text/plain",
                     "pattern": "^\\S+\\.vcf.gz",
-                    "default": "dx://project-GGkXj2Q02y621ZZ9916G2Zy0:/inputs/references/Homo_sapiens_assembly38.dbsnp138.vcf.gz"
+                    "default": "dx://project-GGkXj2Q02y621ZZ9916G2Zy0:/inputs/references/Homo_sapiens_assembly38.dbsnp138.vcf.gz",
+                    "hidden": true
                 }
             }
         }
