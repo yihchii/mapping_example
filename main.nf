@@ -59,7 +59,7 @@ process mapping {
 }
 
 process markdup {
-    machineType "mem3_ssd1_v2_x8"
+    machineType "mem3_ssd2_v2_x8"
     container "quay.io/biocontainers/gatk4:4.2.0.0--0"
     publishDir "${params.outDir}"
     input:
