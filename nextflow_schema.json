@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://raw.githubusercontent.com/haplotypecaller/master/nextflow_schema.json",
-    "title": "haplotypecaller pipeline parameters",
+    "title": "mapping pipeline parameters",
     "description": "",
     "type": "object",
     "definitions": {
